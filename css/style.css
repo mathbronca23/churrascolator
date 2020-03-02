@@ -1,10 +1,11 @@
-body {
+html {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #2A303A;
     color: white;
+
 }   
 
-html:before{
+.BG:before{
         content: "";
         background-image: url(../img/Meat-BG.svg);
         z-index: -99;
@@ -12,55 +13,59 @@ html:before{
         height: 100%;
         background-size: 100%;
         background-repeat: no-repeat;
-        min-width: 1000px;
+        min-width: 700px;
         padding-top: 50px; 
         position: fixed;
         margin-top: 100px;
 }
 
 nav{
-    margin-top: 20px;
-    margin-left: 5vw;
-    min-width: 600px;
-
+    padding: 35px;
 }
 
-nav ul li {
-    margin-right: 4vw;
-    display: inline-block;
-    user-select: none;
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
+.logo{
+    margin-right: 6vw;
+    max-width: 150px;
+}
 
 .menu-item {
-    position: relative;
-    top: -25px;
+    user-select: none;
+    flex-grow: 1;
+    min-width: 60px;
 }
 
-.btn-black {
-    float: right;
-    padding: 12px 30px;
-    top: 12px;
+.menu-item:nth-child(2){
+    flex-grow: 0.05;
 }
 
-.btn-black button {
+.menu-item.btn-black {
+    flex-grow: 0;
+}
+
+
+.btn-black a {
     background-color: #242933;
     border: none;
     color: white;
     font-size: calc(13px + 0.3vw);
     padding: 15px 25px;
     border-radius: 15px;
-    top: -19px;
-    position: relative;
-    transition: background-color 0.3s ease ;
+    transition: background-color 0.3s ease;
 }
 
-.btn-black button:hover {
+.btn-black a:hover {
     cursor: pointer;
-    background-color: #313B50
+    background-color: rgb(56, 64, 82)
 }
 
-.btn-black button:focus {
+.btn-black a:focus {
     outline: none;
 }
 
@@ -77,46 +82,56 @@ nav a:hover {
 }
 
 nav a img{
-    opacity: 100%;
+    width: calc(70% + 3vw)
 }
 
+.container{
+    padding: 50px;
+}
+
+.intro {
+    margin-top: 5vw;
+    margin-left: 5vw;
+    max-width: 50%;
+}
 
 h1 {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: bold;
-    font-size: calc(56px + 0.5vw);
+    font-size: calc(20px + 2vw);
+    max-width: calc(300px + 4vw)
 }
 
 p {
     font-size: calc(12px + 0.3vw);
     font-weight: 100;
     color: #72767D;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 20px;
     line-height: calc(12px + 0.3vw * 1.5);
+    max-width: calc(300px + 4vw)
 }
 
-.Intro {
-    margin: 200px 0 0 5vw;
-    width: 100%;
-    max-width: 450px;
-    min-width: 400px;
-}
+
 ::selection {
     background-color: rgb(145, 147, 158);
 }
 
 .btn {
+    text-align: center;
+    text-decoration: none;
     width: calc(150px + 1vw);
     background: #FB3636;
     color: white;
     font-size: calc(13px + 0.3vw);
     border: none;
-    padding: calc(12px + 0.1vw);
+    padding: calc(15px + 0.1vw) calc(15px + 0.1vw);
     border-radius: 15px;
-    cursor: pointer;
     transition: background-color 0.2s ease-out;
     user-select: none;
+    display: block;
+    margin-top: 25px;
+
 }
 
 .btn:hover {
