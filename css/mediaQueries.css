@@ -1,0 +1,51 @@
+
+@media only screen and (max-width: 1024px) {
+
+    nav {
+        width: fit-content;
+    }
+
+    .menu-item {
+        flex-grow: 0;
+        min-width: 0;
+    }
+
+    .container{
+        margin: 0 auto;
+        flex-direction: column;
+        width: min-content
+    }
+    
+    .intro {
+        width: 100%;
+        max-width: none;
+    }
+
+    .intro, .container section.results {
+        margin: 0;
+    }
+
+    .container section.results{
+        margin-top: 80px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .box {
+        margin-bottom: 25px;
+    }
+
+    span.spinner-input {
+        margin: auto;
+    }
+
+    li.question{
+        align-items: center;
+        justify-content: center;
+    }
+
+    li.question:after {
+        top: 120px;
+    }
+
+}
