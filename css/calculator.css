@@ -10,44 +10,106 @@ b{
 
 .container {
     padding: 50px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(17, 16, 16, 0.2);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
-.Intro{
+.intro{
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 
 .calculator {
+
     margin-top: 50px;
+    max-width: 800px; 
 }
 
-p.question {
-    font-size: calc(12px + 0.3vw);
+
+li.question {
+    list-style: none;
+    font-size: calc(12px + 0.1vw);
     color: white;
-    margin-top: 0;
-
+    counter-increment: list;
+    counter-reset: li;
+    display: block;
+    height: 32px;
+    position: relative;
+    margin-bottom: 80px;
 }
 
-p.question:before {
-    content: "1";
-    margin-right: 12px;
-    display: inline-block;
-    text-align: center;
-    margin-top: 0;
+
+
+li.question .ask {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+li.question::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #72767D;
+    display: block;
+    position: relative;
+    top: 70px;
+}
+
+li.question:last-of-type::after{
+    display: none;
+}
+
+ol {
+    display: block;
+    max-width: 500px;
+    min-width: 440px;
+}
+
+
+li.question:before {
+    font-size: 12px;
+    font-weight: bold;
+    content: counter(list); 
     background-color: #FB3636;
-    padding: 3px 6px;
+    height: calc(20px + 0.5vw);
+    width: calc(20px + 0.5vw);
+    line-height: calc(20px + 0.5vw);
     border-radius: 50px;
+    min-width: 22px;
+    text-align: center;
+    display: block;
+    margin-right: 1em;
+    float: left;
 }
 
-.spinner-input {
-    display: inline-block;
-    height: 25px;
+
+span.spinner-input {
+    height: calc(25px + 0.5vw);
+    margin-bottom: 50px;
+    justify-content: space-between;
+    display: block;
+    float: right;
+}
+
+
+.spinner-input div {
+    height: 100%;
+    display: flex;
+    justify-content: center;    
+    margin-bottom: 8px;
+}
+
+.spinner-label {
+    font-size: 12px;
+    color: #72767D;
+    display: flex;
 }
 
 button.spinner-btn {
@@ -59,7 +121,8 @@ button.spinner-btn {
     font-weight: bold;
     text-align: center;
     height: 100%;
-    width: 25px;
+    width: 35px;
+    margin-bottom: 15px;
 }
 
 button.spinner-btn.left {
@@ -76,10 +139,11 @@ input[type="number"] {
           appearance: textfield;
           text-align: center;
           box-sizing: border-box;
-          border-radius: none;
+          border-radius: 0px;
           border: none;
-          width: 32px;
+          width: 50px;
           height: 100%;
+          margin: 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button {
